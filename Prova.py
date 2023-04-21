@@ -1,25 +1,47 @@
-#lista para armazenamento de dados
-armazenamento = []
 
-#laço de repetição
+dados = []
+
 while True:
 
-    rendimento = float(input('Informe seu rendimento no mês: '))#coletando informações
-    t = (rendimento/0.1)#calculando 1%
-    d = rendimento-t#calculando despesas
+    n = open('Arquivo.txt', 'w')
 
-    mes = str(input('Informe o mês: '))
-    armazenamento.append([rendimento, mes])
-    alterador = input('Quer alterar? S/N').upper() != "S"
+    # Iniciando variavel mês, PRESCISO FAZER O TRATAMENTO DE EXCESSOES AQUI!
+    mes = int(input('Informe o seu mês:'))
 
-    if alterador == "S":
-        n_rendimento = input('Informe seu rendimento no mês: ')
-        armazenamento.append(n_rendimento[0])
+    salario = float(input('Informe seu salário:'))
 
-    if input("Deseja continuar? (S/N)").upper() != "S":
-            break
+    alterar_salario = str(input('Quer alterar? [S/N]')).upper().split()[0]
 
-print(armazenamento)
-print(rendimento)
-print(d)
-print(t)
+    if alterar_salario == 'S':
+        novo_salario = float(input('Informe o novo salario:'))
+        salario = novo_salario
+
+    # Calculando valor que será investido, ou seja, os 10% do salário.
+    porcento_10 = ((salario * 10)/100)
+
+    # calculando o juros sobre o investimento, ou seja, o 1% sobre os 10% retirados do salário.
+    porcento_1 = (porcento_10 * 1) / 100
+
+    # calculando despesas
+    despesa_mensal = (salario - porcento_10)
+
+    dados.append([mes,salario,porcento_10,porcento_1,despesa_mensal])
+    n.write(f'{dados}')
+
+    pergunta = str(input('Quer continuar? [S/N]:')).upper().split()[0]
+
+    if pergunta == 'N':
+        break
+    if pergunta != 'N' and pergunta != 'S':
+        break
+
+
+print('\n\n\n')
+print(dados)
+print(f'Este é o salario adicionado :{salario}')
+print(f'Este é o valor que vai ser investido neste mês : {porcento_10}')
+print(f'Este é o valor recebido do investimento no juros de 1% :{porcento_1}')
+print(f'A despesa mensal foi de {despesa_mensal}')
+
+
+# print = total salario, total das despesas, total do investimento.
