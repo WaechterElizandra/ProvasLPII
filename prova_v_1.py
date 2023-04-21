@@ -23,6 +23,6 @@ if alterar_salario == 'S':
 conteudo.append([mes, salario, porcento_10, porcento_1, despesa_mensal])   # insira seu conteúdo
 
 nome = open('Arquivo.txt', 'w') # Abre novamente o arquivo (escrita)
-nome.writelines(str(conteudo))    # escreva o conteúdo criado anteriormente nele.
+nome.writelines(str(conteudo)) # escreva o conteúdo criado anteriormente nele.
 
 nome.close()
