@@ -52,15 +52,15 @@ with open('Arquivo.txt', 'r') as n:
 
 total_investimento = float(total_por10 + total_por1)
 
-#opcoes = int(input("MENU \n 1)TOTAL DE SALÁRIOS \n 2)TOTAL INVESTIMENTO \n 3)TOTAL RENDIMENTO \n 4)TOTAL DE DESPESAS\n 5) SAAIR DO MENU\n\n Resposta: "))
+opcoes = int(input("MENU \n 1)TOTAL DE SALÁRIOS \n 2)TOTAL INVESTIMENTO \n 3)TOTAL RENDIMENTO \n 4)TOTAL DE DESPESAS\n 5) SAAIR DO MENU\n\n Resposta: "))
 
 
-""" while opcoes != 5:
+if opcoes != 5:
     if opcoes == 1:
         print(f'O total de salários recebido foi : {total_salarios}')
     if opcoes == 2:
         print(f'O total investido foi : {total_por10}')
     if opcoes == 3:
-            print(f'O total do rendimento : {total_por1}')
+        print(f'O total do rendimento : {total_por1}')
     if opcoes == 4:
-        opcoes = int(input(f'O total das despesas : {total_despesa}'))"""
+        opcoes = int(input(f'O total das despesas : {total_despesa}'))
