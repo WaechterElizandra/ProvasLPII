@@ -1,12 +1,12 @@
-nome = open('Arquivo.txt', 'r') # Abra o arquivo (leitura)
-
+with open('Arquivo.txt', 'r') as nome: # Abra o arquivo (leitura)
+    conteudo = nome.readlines()
 meses = []
 salarios = []
 despesas = []
 porcentos_10 =[]
 porcentos_1 = []
 
-conteudo = nome.readlines()
+
 mes = int(input('Informe o seu mês:'))
 meses.append(mes)
 
