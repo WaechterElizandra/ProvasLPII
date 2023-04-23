@@ -7,6 +7,7 @@ total_investimento = 0
 
 with open('Arquivo.txt', 'r') as n:
     armazem = n.readlines()
+
     meses = []
     salarios = []
     despesas = []
@@ -19,19 +20,17 @@ with open('Arquivo.txt', 'r') as n:
         # Separar os valores da linha pelo caractere ","
         valores = linhas.split(",")
 
-
-
-
-
-        mes = float(valores[1])
-        salario = float(valores[2])
-        porcento_10 = float(valores[3])
-        porcento_1 = float(valores[4])
-        despesa = float(valores[5].strip())
-
         print(valores)
         for c, v in enumerate(valores):
             print(f'Na posição {c} encontrei o valor {v}')
+
+        mes = float(valores[0])
+        salario = float(valores[1])
+        porcento_10 = float(valores[2])
+        porcento_1 = float(valores[3])
+        despesa = float(valores[4].strip())
+
+
 
         meses.append(mes)
         salarios.append(salario)

@@ -28,8 +28,8 @@ if alterar_salario == 'S':
     salario = novo_salario
 
 
-nome = open('Arquivo.txt', 'a') # Abre novamente o arquivo (escrita)
-nome.write(f'{mes},{salario},{porcento_10},{porcento_1},{despesa_mensal}\n')
+with open('Arquivo.txt', 'a') as nome: # Abre novamente o arquivo (escrita)
+    nome.write(f'{mes},{salario},{porcento_10},{porcento_1},{despesa_mensal}\n')
 
 
 nome.close()
